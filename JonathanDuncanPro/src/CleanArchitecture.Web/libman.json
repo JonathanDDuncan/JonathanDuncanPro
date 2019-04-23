@@ -7,7 +7,7 @@
       "destination": "wwwroot/lib/bootstrap/dist"
     },
     {
-      "library": "jquery@3.4.0", 
+      "library": "jquery@2.2.4", 
       "files": [
         "jquery.min.js",
         "jquery.js",
