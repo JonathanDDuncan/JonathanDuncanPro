@@ -36,3 +36,17 @@ textarea {
     display: none
   }
 }
+
+
+#service .single_service_content.websites {
+    min-height: 260px;
+}
+
+#service .websites .items {
+    float: left;
+    margin: 15px;
+}
+
+#service .single_service_img img {
+    height: 262px;
+}
