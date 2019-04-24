@@ -1135,7 +1135,7 @@ var getNeededScripts = function(o,c) {
 	if (n.layeranim && typeof _R.handleStaticLayers=='undefined') lAjax('revolution.extension.layeranimation',o);						
 	if (n.kenburns && typeof _R.stopKenBurn=='undefined') lAjax('revolution.extension.kenburn',o); 
 	if (n.navigation && typeof _R.createNavigation=='undefined') lAjax('revolution.extension.navigation',o);					
-	if (n.migration && typeof _R.migration=='undefined') lAjax('revolution.extension.migration',o);					
+	if (n.migration && typeof _R.migration=='undefined') lAjax('revolution.extension.navigation',o);					
 	if (n.parallax && typeof _R.checkForParallax=='undefined') lAjax('revolution.extension.parallax',o);					
 	
 	if (o.addons!=undefined && o.addons.length>0) {		
