@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Core", "JonathanDuncanPro\src\CleanArchitecture.Core\CleanArchitecture.Core.csproj", "{B127CC41-B931-41FC-9961-B861355DFCDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JonathanDuncanPro.Core", "JonathanDuncanPro\src\JonathanDuncanPro.Core\JonathanDuncanPro.Core.csproj", "{B127CC41-B931-41FC-9961-B861355DFCDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Infrastructure", "JonathanDuncanPro\src\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj", "{64594A7F-8EE0-472B-91F6-C98689E96E13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JonathanDuncanPro.Infrastructure", "JonathanDuncanPro\src\JonathanDuncanPro.Infrastructure\JonathanDuncanPro.Infrastructure.csproj", "{64594A7F-8EE0-472B-91F6-C98689E96E13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Web", "JonathanDuncanPro\src\CleanArchitecture.Web\CleanArchitecture.Web.csproj", "{A9AC17DF-015C-4A7D-9F22-47A603E68965}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JonathanDuncanPro.Web", "JonathanDuncanPro\src\JonathanDuncanPro.Web\JonathanDuncanPro.Web.csproj", "{A9AC17DF-015C-4A7D-9F22-47A603E68965}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Tests", "JonathanDuncanPro\tests\CleanArchitecture.Tests\CleanArchitecture.Tests.csproj", "{4A91BFB4-3752-437D-88CF-CD3AA274D7A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JonathanDuncanPro.Tests", "JonathanDuncanPro\tests\JonathanDuncanPro.Tests\JonathanDuncanPro.Tests.csproj", "{4A91BFB4-3752-437D-88CF-CD3AA274D7A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
