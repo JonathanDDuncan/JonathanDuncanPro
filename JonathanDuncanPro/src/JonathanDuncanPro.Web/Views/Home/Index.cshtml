@@ -1,6 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Home";
     Layout = "_ClassyLayout";
+    var profileLink = "https://www.upwork.com/o/profiles/users/_~015c11075498b5d53e/";
+    var backEndLink = "https://www.upwork.com/o/profiles/users/_~015c11075498b5d53e/?s=1110580748673863680";
+    var frontEndLink = "https://www.upwork.com/o/profiles/users/_~015c11075498b5d53e/?s=1110580755057594368";
 }
 
     <!-- ***** Welcome Area Start ***** -->
@@ -126,7 +129,7 @@
                         <div class="about_us_text wow fadeInUp" data-wow-delay="0.5s">
                             <h3 class="m-bottom-15">I am a top rated freelancer on UpWork. Any programming you need for you website or .NET application, I can do it well.</h3>
                             <p>I have many satisfied clients which shows the quality of my programming frelancing skills</p>
-                            <a href="https://www.upwork.com/o/profiles/users/_~015c11075498b5d53e/" target="_blank" class="btn btn-pill btn-success">View Profile</a>
+                            <a href="@profileLink" target="_blank" class="btn btn-pill btn-success">View Profile</a>
                             <a href="https://www.upwork.com/signup/create-account/client_contact_freelancer?ciphertext=~~12a3d9ad6d21cdcc&BYOC" target="_blank" class="btn btn-pill btn-success">Hire Me</a>
                         </div>
                     </div>
@@ -243,28 +246,29 @@
                             <img src="~/images/apple-desk-internet-209151.jpg" alt="">
                         </div>
                         <!-- Single Service content -->
-                        <div class="single_service_content websites">
+                        <div class="single_service_desc">
                             <h5>Websites</h5>
-
-                            <div class="items">
-                                <ul>
-                                    <li>.Core MVC</li>
-                                    <li>ASP.NET MVC 5</li>
-                                    <li>.NET Web API</li>
-                                    <li>Angular 2+</li>
-                                </ul>
+                            <div class="services_text">
+                                <div class="items">
+                                    <ul>
+                                        <li>.Core MVC</li>
+                                        <li>ASP.NET MVC 5</li>
+                                        <li>.NET Web API</li>
+                                        <li>Angular 2+</li>
+                                    </ul>
+                                </div>
+                                <div class="items">
+                                    <ul>
+                                        <li>HTML5</li>
+                                        <li>CSS3 / SCSS</li>
+                                        <li>Bootstrap</li>
+                                        <li>JavaScript</li>
+                                        <li>Typescript</li>
+                                        <li>ELM</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="items">
-                                <ul>
-                                    <li>HTML5</li>
-                                    <li>CSS3 / SCSS</li>
-                                    <li>Bootstrap</li>
-                                    <li>JavaScript</li>
-                                    <li>Typescript</li>
-                                    <li>ELM</li>
-                                </ul>
-                            </div>
-                            <a href="#" class="btn btn-pill btn-sm btn-primary">Discover More</a>
+                            <a target="_blank" href="@frontEndLink" class="btn btn-pill btn-sm btn-primary">Discover More</a>
                         </div>
                     </div>
                 </div>
@@ -277,14 +281,16 @@
                             <img src="~/images/analogue-blur-business-159282.jpg" alt="">
                         </div>
                         <!-- Single Service content -->
-                        <div class="single_service_content  websites">
+                        <div class="single_service_desc">
                             <h5>Database</h5>
-                            <p>
-                                Microsoft SQL server MSSQL Database driven website. Relational design and queries.
-                                Entity Framework, LINQ, LocalForage
-                            </p>
-                            
-                                <a href="#" class="btn btn-pill btn-sm btn-primary">Discover More</a></div>
+                            <div class="services_text">
+                                <p>
+                                    Microsoft SQL server MSSQL Database driven website. Relational design and queries.
+                                    Entity Framework, LINQ, LocalForage
+                                </p>
+                            </div>
+                            <a target="_blank" href="@backEndLink" class="btn btn-pill btn-sm btn-primary">Discover More</a>
+                        </div>
                            
                         </div>
                 </div>
@@ -297,12 +303,12 @@
                             <img src="~/images/brunette-computer-computer-keyboard-2084974.jpg" alt="">
                         </div>
                         <!-- Single Service content -->
-                        <div class="single_service_content websites">
+                        <div class="single_service_desc">
                             <h5>Desktop</h5>
-                            <p>Windows desktop apps, WebForms, WPF</p>
-                            
-                                <a href="#" class="btn btn-pill btn-sm btn-primary">Discover More</a>
-                            
+                            <div class="services_text">
+                                <p>Windows desktop apps, WebForms, WPF</p>
+                            </div>
+                            <a target="_blank" href="@profileLink" class="btn btn-pill btn-sm btn-primary">Discover More</a>
                         </div>
                     </div>
                 </div>

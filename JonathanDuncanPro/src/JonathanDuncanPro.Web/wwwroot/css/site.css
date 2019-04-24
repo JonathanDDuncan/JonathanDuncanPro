@@ -38,15 +38,28 @@ textarea {
 }
 
 
-#service .single_service_content.websites {
+#service .single_service_desc {
     min-height: 260px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    position:relative;
+    top: -50px;
 }
 
-#service .websites .items {
-    float: left;
-    margin: 15px;
+#service .services_text {
+    min-height: 155px;
+}
+#service .single_service_desc .items {
+    justify-content:center;
+    float:left;
+    width:50%;
 }
 
 #service .single_service_img img {
     height: 262px;
+}
+
+
+#service .section_heading p {
+    color:aliceblue;
 }
