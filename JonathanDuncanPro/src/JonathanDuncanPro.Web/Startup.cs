@@ -42,6 +42,8 @@ namespace JonathanDuncanPro.Web
             services.AddMvc()
                 .AddControllersAsServices()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+           
+            services.AddWebOptimizer();
 
             services.AddSwaggerGen(c =>
             {
@@ -76,6 +78,7 @@ namespace JonathanDuncanPro.Web
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
             else
             {
@@ -84,6 +87,7 @@ namespace JonathanDuncanPro.Web
             }
 
             app.UseHttpsRedirection();
+            app.UseWebOptimizer();
             app.UseStaticFiles(new StaticFileOptions
             {
                 OnPrepareResponse = ctx =>
