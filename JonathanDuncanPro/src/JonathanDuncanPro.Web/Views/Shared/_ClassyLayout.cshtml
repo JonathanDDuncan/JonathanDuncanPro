@@ -13,7 +13,7 @@
     <!-- Favicon  -->
     <link rel="shortcut icon" href="jonathanduncan.ico">
 
-    <environment names="Development">
+    @*<environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <!-- REVOLUTION STYLE SHEETS -->
         <link rel="stylesheet" type="text/css" href="classy/revolution/css/settings.css">
@@ -45,43 +45,93 @@
         <!-- Switch Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
         <link href="classy/css/fonts/opensans.css" rel="stylesheet">
-    </environment>
+
+        <link rel="stylesheet" href="css/site.css">
+    </environment>*@
+<environment names="Development">
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.3.1/css/bootstrap.min.css"
+          asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+
+    <!-- REVOLUTION STYLE SHEETS -->
+    <link rel="stylesheet" type="text/css" href="classy/revolution/css/settings.min.css" asp-append-version="true">
+    <link rel="stylesheet" type="text/css" href="classy/revolution/css/layers.min.css" asp-append-version="true">
+    <link rel="stylesheet" type="text/css" href="classy/revolution/css/navigation.min.css" asp-append-version="true">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="classy/css/others/magnific-popup.css" asp-append-version="true">
+    <link rel="stylesheet" href="classy/css/others/animate.css" asp-append-version="true">
+    <link rel="stylesheet" href="classy/css/others/owl.carousel.css" asp-append-version="true">
+    <link rel="stylesheet" href="classy/css/others/YTPlayer.css" asp-append-version="true">
+    <link rel="stylesheet" href="classy/css/others/navigation.css" asp-append-version="true">
+    <link rel="stylesheet" href="classy/css/icon/font-awesome.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="classy/css/icon/ionicons.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="classy/css/icon/pe-icon-7-stroke.css" asp-append-version="true">
+    <link rel="stylesheet" href="classy/css/icon/wfmi-style.css" asp-append-version="true">
+    <link rel="stylesheet" href="classy/css/icon/et-line.css" asp-append-version="true">
+    <link rel="stylesheet" href="classy/css/icon/classy-icon.css" asp-append-version="true">
+    <link rel="stylesheet" href="classy/css/classy-shortcodes.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="classy/css/core-style.min.css" asp-append-version="true">
+    <link rel="stylesheet" href="classy/css/style.css" asp-append-version="true">
+
+    <!-- Responsive css -->
+    <link href="classy/css/responsive/responsive.min.css" rel="stylesheet" asp-append-version="true">
+    
+    <!-- Switch Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
+    <link href="classy/css/fonts/opensans.min.css" rel="stylesheet" asp-append-version="true">
+    
+    <link rel="stylesheet" href="css/site.min.css" asp-append-version="true" />
+
+</environment>
+
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.3.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+
+
         <!-- REVOLUTION STYLE SHEETS -->
-        <link rel="stylesheet" type="text/css" href="classy/revolution/css/settings.css" asp-append-version="true">
-        <link rel="stylesheet" type="text/css" href="classy/revolution/css/layers.css" asp-append-version="true">
-        <link rel="stylesheet" type="text/css" href="classy/revolution/css/navigation.css" asp-append-version="true">
+        @*<link rel="stylesheet" type="text/css" href="classy/revolution/css/settings.css" asp-append-version="true">
+            <link rel="stylesheet" type="text/css" href="classy/revolution/css/layers.css" asp-append-version="true">
+            <link rel="stylesheet" type="text/css" href="classy/revolution/css/navigation.css" asp-append-version="true">*@
+        <link rel="stylesheet" type="text/css" href="css/revolution.min.css" asp-append-version="true">
 
         <!-- Core Style CSS -->
-        /* :: 1.0 All CSS */
         <link rel="stylesheet" href="classy/css/bootstrap/bootstrap.min.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/others/magnific-popup.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/others/animate.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/others/owl.carousel.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/others/YTPlayer.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/others/navigation.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/icon/font-awesome.min.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/icon/ionicons.min.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/icon/pe-icon-7-stroke.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/icon/wfmi-style.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/icon/et-line.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/icon/classy-icon.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/classy-shortcodes.min.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/core-style.css" asp-append-version="true">
-        <link rel="stylesheet" href="classy/css/style.css" asp-append-version="true">
-        <link rel="stylesheet" href="css/site.min.css" asp-append-version="true">
+        @*<link rel="stylesheet" href="classy/css/others/magnific-popup.css" asp-append-version="true">
+            <link rel="stylesheet" href="classy/css/others/animate.css" asp-append-version="true">
+            <link rel="stylesheet" href="classy/css/others/owl.carousel.css" asp-append-version="true">
+            <link rel="stylesheet" href="classy/css/others/YTPlayer.css" asp-append-version="true">
+            <link rel="stylesheet" href="classy/css/others/navigation.css" asp-append-version="true">
+            <link rel="stylesheet" href="classy/css/icon/font-awesome.min.css" asp-append-version="true">
+            <link rel="stylesheet" href="classy/css/icon/ionicons.min.css" asp-append-version="true">
+            <link rel="stylesheet" href="classy/css/icon/pe-icon-7-stroke.css" asp-append-version="true">
+            <link rel="stylesheet" href="classy/css/icon/wfmi-style.css" asp-append-version="true">
+            <link rel="stylesheet" href="classy/css/icon/et-line.css" asp-append-version="true">
+            <link rel="stylesheet" href="classy/css/icon/classy-icon.css" asp-append-version="true">
+            <link rel="stylesheet" href="classy/css/classy-shortcodes.min.css" asp-append-version="true">
+            <link rel="stylesheet" href="classy/css/core-style.css" asp-append-version="true">
+            <link rel="stylesheet" href="classy/css/style.css" asp-append-version="true">*@
+        <link rel="stylesheet" type="text/css" href="css/classy.min.css" asp-append-version="true">
+
 
         <!-- Responsive css -->
-        <link href="classy/css/responsive/responsive.css" rel="stylesheet" asp-append-version="true">
+        @*<link href="classy/css/responsive/responsive.css" rel="stylesheet" asp-append-version="true">*@
+        <link rel="stylesheet" type="text/css" href="css/responsive.min.css" asp-append-version="true">
+
 
         <!-- Switch Fonts -->
-        <link href="classy/css/fonts/opensans.css" rel="stylesheet" asp-append-version="true">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
+        @*<link href="classy/css/fonts/opensans.css" rel="stylesheet" asp-append-version="true">*@
+        <link rel="stylesheet" type="text/css" href="css/opensans.min.css" asp-append-version="true">
+
+
+        @*<link rel="stylesheet" href="css/site.min.css" asp-append-version="true" />*@
+        <link rel="stylesheet" type="text/css" href="css/site.min.css" asp-append-version="true">
+
     </environment>
-    <link rel="stylesheet" href="css/site.css">
+
 </head>
 
 <body>
