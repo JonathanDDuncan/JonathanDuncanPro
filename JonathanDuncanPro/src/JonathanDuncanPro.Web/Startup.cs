@@ -2,6 +2,7 @@
 using Autofac.Extensions.DependencyInjection;
 using JonathanDuncanPro.Core.SharedKernel;
 using JonathanDuncanPro.Infrastructure.Data;
+using JonathanDuncanPro.Web.Code.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -109,6 +110,8 @@ namespace JonathanDuncanPro.Web
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapBundledFileAccessForDebug(env);
             });
         }
     }
