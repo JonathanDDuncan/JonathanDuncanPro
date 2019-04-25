@@ -63,3 +63,12 @@ textarea {
 #service .section_heading p {
     color:aliceblue;
 }
+
+.creative_version.our_speciality_area {
+    padding-bottom: 80px;
+}
+
+.foo_top_header_one section_padding_30_10 {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
