@@ -37,6 +37,13 @@ namespace JonathanDuncanPro.Web
             string dbName = Guid.NewGuid().ToString();
             services.AddDbContext<AppDbContext>(options =>
                 options.UseInMemoryDatabase(dbName));
+
+            services.AddLogging(loggingBuilder =>
+            {
+                loggingBuilder.AddConfiguration(Configuration.GetSection("Logging"));
+                loggingBuilder.AddConsole();
+                loggingBuilder.AddDebug();
+            });
             //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc()
@@ -72,13 +79,9 @@ namespace JonathanDuncanPro.Web
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-
             }
             else
             {
