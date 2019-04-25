@@ -88,7 +88,7 @@ namespace JonathanDuncanPro.Web
             {
                 OnPrepareResponse = ctx =>
                 {
-                    const int durationInSeconds = 60 * 60 * 24 * 2;
+                    const int durationInSeconds = 60 * 60 * 24 * 366;
                     ctx.Context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.CacheControl] =
                         "public,max-age=" + durationInSeconds;
                 }
