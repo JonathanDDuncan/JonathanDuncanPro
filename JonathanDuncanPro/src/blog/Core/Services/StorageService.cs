@@ -536,7 +536,7 @@ namespace Core.Services
                 || path.EndsWith(".ogg", StringComparison.OrdinalIgnoreCase))
                 ext = "audio.png";
 
-            return $"lib/img/doctypes/{ext}";
+            return $"blog/lib/img/doctypes/{ext}";
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Common.Widgets
 
             var model = new NewsletterModel { Header = header, ThankYou = thankyou };
 
-            return View("~/Areas/Blog/Views/Widgets/Newsletter/Index.cshtml", model);
+            return View("~/Views/Widgets/Newsletter/Index.cshtml", model);
         }
     }
 

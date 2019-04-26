@@ -21,7 +21,7 @@ namespace Common.Modules.Archive
             model.Blog = await _db.CustomFields.GetBlogSettings();
             model.Blog.Cover = $"{Url.Content("~/")}{model.Blog.Cover}";
 
-            return View("~/Areas/Blog/Views/Modules/Archive/Index.cshtml", model);
+            return View("~/Views/Modules/Archive/Index.cshtml", model);
         }
     }
 }

@@ -62,7 +62,7 @@ namespace Common.Widgets
 
             var model = new PostListWidgetModel { Title = widget, Posts = posts.Take(maxRec).ToList(), Template = template };
 
-            return View("~/Areas/Blog/Views/Widgets/PostList/Index.cshtml", model);
+            return View("~/Views/Widgets/PostList/Index.cshtml", model);
         }
     }
 

@@ -16,7 +16,7 @@ namespace Core.Data
                 AppUserName = "admin",
                 Email = "admin@us.com",
                 DisplayName = "Administrator",
-                Avatar = "data/admin/avatar.png",
+                Avatar = "blog/data/admin/avatar.png",
                 Bio = "<p>Something about <b>administrator</b>, maybe HTML or markdown formatted text goes here.</p><p>Should be customizable and editable from user profile.</p>",
                 IsAdmin = true,
                 Created = DateTime.UtcNow.AddDays(-120)
@@ -44,7 +44,7 @@ namespace Core.Data
                 Content = SeedData.PostWhatIs,
                 Categories = "welcome,blog",
                 AuthorId = adminId,
-                Cover = "data/admin/cover-blog.png",
+                Cover = "blog/data/admin/cover-blog.png",
                 PostViews = 5,
                 Rating = 4.5,
                 IsFeatured = true,
@@ -59,7 +59,7 @@ namespace Core.Data
                 Content = SeedData.PostFeatures,
                 Categories = "blog",
                 AuthorId = adminId,
-                Cover = "data/admin/cover-globe.png",
+                Cover = "blog/data/admin/cover-globe.png",
                 PostViews = 15,
                 Rating = 4.0,
                 Published = DateTime.UtcNow.AddDays(-55)
@@ -122,7 +122,7 @@ Blogifier is simple, beautiful, light-weight open source blog written in .NET Co
 
 The [demo site](http://blogifier.azurewebsites.net) is a playground to check out Blogifier features. You can write and publish posts, upload files and test application before install. And no worries, it is just a sandbox and will clean itself.
 
-![Demo-1.png](/data/admin/admin-editor.png)";
+![Demo-1.png](/blog/data/admin/admin-editor.png)";
 
         public static readonly string PostFeatures = @"### User Management
 Blogifier is multi-user application with simple admin/user roles, allowing every user write and publish posts and administrator create new users.
@@ -130,7 +130,7 @@ Blogifier is multi-user application with simple admin/user roles, allowing every
 ### Content Management
 Built-in file manager allows upload images and files and use them as links in the post editor.
 
-![file-mgr.png](/data/admin/admin-files.png)
+![file-mgr.png](/blog/data/admin/admin-files.png)
 
 ### Plugin System
 Blogifier built as highly extendable application allowing themes, widgets and modules to be side-loaded and added to blog at runtime.

@@ -76,9 +76,9 @@ namespace JonathanDuncanPro.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             // TODO: Add DbContext and IOC
-            string dbName = Guid.NewGuid().ToString();
-            services.AddDbContext<AppDbContext>(options =>
-                options.UseInMemoryDatabase(dbName));
+            //string dbName = Guid.NewGuid().ToString();
+            //services.AddDbContext<AppDbContext>(options =>
+            //    options.UseInMemoryDatabase(dbName));
             //services.AddDbContext<AppDbContext>(options =>
             //    options.UseInMemoryDatabase(dbName));
             services.AddDbContext<AppDbContext>(AppSettings.DbOptions, ServiceLifetime.Transient);
@@ -100,7 +100,7 @@ namespace JonathanDuncanPro.Web
                 loggingBuilder.AddConsole();
                 loggingBuilder.AddDebug();
             });
-            //TODO from Iblogger
+            //TODO from Blogifier
             //services.AddLogging(loggingBuilder =>
             //    loggingBuilder.AddSerilog(dispose: true));
 
@@ -146,7 +146,7 @@ namespace JonathanDuncanPro.Web
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
             });
 
-            // TODO from Iblogger
+            // TODO from Blogifier
             //services.AddSwaggerGen(setupAction => {
             //    setupAction.SwaggerDoc("spec",
             //        new Microsoft.OpenApi.Models.OpenApiInfo()
@@ -220,11 +220,7 @@ namespace JonathanDuncanPro.Web
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                name: "blog",
-                template: "{area:exists}/{controller=Blog}/{action=Index}/{id?}");
-
-                routes.MapRoute(
+                   routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
 

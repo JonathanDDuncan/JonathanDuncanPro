@@ -1,14 +1,52 @@
-﻿@{
-    ViewData["Title"] = "Error";
+﻿@model PostModel
+@{
+    var code = ViewContext.RouteData.Values["code"];
+    var statusmessage = "";
+    switch (int.Parse(code.ToString()))
+    {
+        case 400:
+            statusmessage = "Bad request: The request cannot be fulfilled due to bad syntax";
+            break;
+        case 403:
+            statusmessage = "Forbidden";
+            break;
+        case 404:
+            statusmessage = "Page not found";
+            break;
+        case 408:
+            statusmessage = "The server timed out waiting for the request";
+            break;
+        case 500:
+            statusmessage = "Internal Server Error - server was unable to finish processing the request";
+            break;
+        default:
+            statusmessage = "That’s odd... Something we didn't expect happened";
+            break;
+    }
+    ViewData["Title"] = statusmessage;
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <partial name="~/Views/Themes/Standard/_Shared/_Head.cshtml" />
+</head>
+<body class="@ViewData["bodyClass"]">
+    <partial name="~/Views/Themes/Standard/_Shared/_Header.cshtml" />
 
-<h3>Development Mode</h3>
-<p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
-</p>
-<p>
-    <strong>Development environment should not be enabled in deployed applications</strong>, as it can result in sensitive information from exceptions being displayed to end users. For local debugging, development environment can be enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>, and restarting the application.
-</p>
+    <div class="page-cover" style="background-image: url('@Model.Blog.Cover')">
+        <h1 class="page-cover-title">
+                <a href="~/">@Model.Blog.Title</a>
+        </h1>
+        <p class="page-cover-desc">@Model.Blog.Description</p>
+    </div>
+
+    <div class="page-content">
+        <div class="container" style="padding: 40px">
+            <h1>Error @code</h1>
+            <p>@statusmessage</p>
+        </div>
+    </div>
+    <partial name="~/Views/Themes/Standard/_Shared/_Footer.cshtml" />
+</body>
+</html>

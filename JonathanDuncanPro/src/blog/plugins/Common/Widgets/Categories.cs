@@ -37,7 +37,7 @@ namespace Common.Widgets
             {
                 model.Categories.Add(cat);
             }
-            return View("~/Areas/Blog/Views/Widgets/Categories/Index.cshtml", model);
+            return View("~/Views/Widgets/Categories/Index.cshtml", model);
         }
     }
 

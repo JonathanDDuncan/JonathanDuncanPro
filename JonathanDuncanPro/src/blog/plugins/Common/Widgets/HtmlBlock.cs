@@ -33,7 +33,7 @@ namespace Common.Widgets
                 model = existing.Content;
             } 
 
-            return View("~/Areas/Blog/Views/Widgets/HtmlBlock/Index.cshtml", model);
+            return View("~/Views/Widgets/HtmlBlock/Index.cshtml", model);
         }
     }
 
