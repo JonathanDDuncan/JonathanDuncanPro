@@ -32,18 +32,19 @@ namespace App.Helpers
 
         private bool ShouldBeActive()
         {
-            var page = ViewContext.RouteData.Values["page"];
-            if (page != null)
-            {
-                var url = page.ToString().ToLower();
+            //var page = ViewContext.RouteData.Values["page"];
+            //if (page != null)
+            //{
+            //    var url = page.ToString().ToLower();
 
-                if (url.EndsWith($"{Controller}/{Action}"))
-                    return true;
+            //    if (url.EndsWith($"{Controller}/{Action}"))
+            //        return true;
 
-                if (url.Contains(Controller) && string.IsNullOrEmpty(Action))
-                    return true;
-            }
-            return false;
+            //    if (url.Contains(Controller) && string.IsNullOrEmpty(Action))
+            //        return true;
+            //}
+            //return false;
+            return true;
         }
 
         private void MakeActive(TagHelperOutput output)

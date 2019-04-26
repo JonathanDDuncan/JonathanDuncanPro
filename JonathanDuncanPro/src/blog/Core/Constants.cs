@@ -17,6 +17,6 @@
         public static string BlogCover = "blog-cover";
         public static string Culture = "culture";
 
-        public static string ThemeEditReturnUrl = "~/admin/settings/theme";
+        public static string ThemeEditReturnUrl = "~/blog/admin/settings/theme";
     }
 }
