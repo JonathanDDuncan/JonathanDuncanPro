@@ -52,13 +52,23 @@ namespace JonathanDuncanPro.Web
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            var section = Configuration.GetSection("Blogifier");
+            IConfigurationSection section;
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+            {
+                section = Configuration.GetSection("Production");
+            }
+            else
+            {
+                section = Configuration.GetSection("Blogifier");
+            }
 
             services.AddAppSettings<AppItem>(section);
 
             if (section.GetValue<string>("DbProvider") == "SqlServer")
             {
                 AppSettings.DbOptions = options => options.UseSqlServer(section.GetValue<string>("ConnString"));
+                services.AddDbContext<AppDbContext>(options =>
+                 options.UseSqlServer(Configuration.GetConnectionString("jonathanduncanproconn")));
             }
             else if (section.GetValue<string>("DbProvider") == "MySql")
             {
