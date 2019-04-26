@@ -1,4 +1,4 @@
-﻿<header class="blog-header d-flex flex-column">
+<header class="blog-header d-flex flex-column">
     <div class="container d-flex">
         <a href="~/" class="blog-logo my-auto d-flex">
             <img src="~/blog/@Model.Blog.Logo" alt="@Model.Blog.Title" class="my-auto" />
@@ -8,7 +8,8 @@
             }
         </a>
         <ul class="blog-social nav ml-auto my-auto">
-                <vc:html-block theme="Standard"  widget = "Social Buttons"></vc:html-block>
+            <li class="blog-social-item"><a href="https://www.facebook.com/blogifierdotnet" target="_blank" class="blog-social-link"><i class="blog-social-icon fa fa-facebook-official"></i></a></li>
+            <li class="blog-social-item"><a href="/feed/rss" target="_blank" class="blog-social-link"><i class="blog-social-icon fa fa-rss-square"></i></a></li>
         </ul>
         <button class="blog-search-toggle btn-unstyled" type="button" data-toggle="modal" data-target="#blog-search">
             <i class="fa fa-search"></i>

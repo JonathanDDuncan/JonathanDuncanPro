@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace Common.Widgets
 {
     //[ViewComponent(Name = "HtmlBlock")]
-    public class HtmlBlockViewComponent : ViewComponent
+    public class HtmlBlock : ViewComponent
     {
         IDataService _db;
 
-        public HtmlBlockViewComponent(IDataService db)
+        public HtmlBlock(IDataService db)
         {
             _db = db;
         }
