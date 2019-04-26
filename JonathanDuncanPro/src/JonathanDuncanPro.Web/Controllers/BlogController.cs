@@ -189,11 +189,11 @@ namespace App.Controllers
             }
         }
 
-        [HttpPost, Route("account/logout")]
+        [Route("account/logout")]
         public async Task<IActionResult> Logout()
         {
             await _sm.SignOutAsync();
-            return Redirect("~/");
+            return Redirect("~/blog");
         }
     }
 }

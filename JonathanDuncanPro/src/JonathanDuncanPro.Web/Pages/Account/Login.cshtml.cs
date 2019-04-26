@@ -60,7 +60,7 @@ namespace App.Pages.Account
             }
             else
             {
-                return Redirect("~/");
+                return Redirect("~/blog");
             }
         }
     }

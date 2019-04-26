@@ -198,6 +198,8 @@ namespace JonathanDuncanPro.Web
 
             app.UseHttpsRedirection();
             app.UseWebOptimizer();
+           
+            app.UseAuthentication();
             app.UseStaticFiles(new StaticFileOptions
             {
                 OnPrepareResponse = ctx =>
@@ -208,7 +210,7 @@ namespace JonathanDuncanPro.Web
                 }
             });
             app.UseCookiePolicy();
-
+            app.UseRequestLocalization();
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
@@ -217,6 +219,9 @@ namespace JonathanDuncanPro.Web
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
+
+            AppSettings.WebRootPath = env.WebRootPath;
+            AppSettings.ContentRootPath = env.ContentRootPath;
 
             app.UseMvc(routes =>
             {
