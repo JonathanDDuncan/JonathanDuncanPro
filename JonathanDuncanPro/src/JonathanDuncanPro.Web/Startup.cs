@@ -38,11 +38,20 @@ namespace JonathanDuncanPro.Web
             string dbName = Guid.NewGuid().ToString();
             services.AddDbContext<AppDbContext>(options =>
                 options.UseInMemoryDatabase(dbName));
+
+            services.AddLogging(loggingBuilder =>
+            {
+                loggingBuilder.AddConfiguration(Configuration.GetSection("Logging"));
+                loggingBuilder.AddConsole();
+                loggingBuilder.AddDebug();
+            });
             //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc()
                 .AddControllersAsServices()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+           
+            services.AddWebOptimizer();
 
             services.AddSwaggerGen(c =>
             {
@@ -71,12 +80,10 @@ namespace JonathanDuncanPro.Web
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
             }
             else
             {
@@ -85,6 +92,7 @@ namespace JonathanDuncanPro.Web
             }
 
             app.UseHttpsRedirection();
+            app.UseWebOptimizer();
             app.UseStaticFiles(new StaticFileOptions
             {
                 OnPrepareResponse = ctx =>

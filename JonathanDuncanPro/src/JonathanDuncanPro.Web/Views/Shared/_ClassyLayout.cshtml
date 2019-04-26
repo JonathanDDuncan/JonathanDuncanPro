@@ -11,82 +11,46 @@
     <!-- Title  -->
     <title>@ViewData["Title"] - Jonathan Duncan's website</title>
     <!-- Favicon  -->
-    <link rel="shortcut icon" href="~/jonathanduncan.ico">
+    <link rel="shortcut icon" href="jonathanduncan.ico">
+
+    <link rel="stylesheet" href="@Url.Content("~/lib/bootstrap/dist/css/bootstrap.css")" />
+    <!-- REVOLUTION STYLE SHEETS -->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/classy/revolution/css/settings.min.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/classy/revolution/css/layers.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/classy/revolution/css/navigation.css")">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/bootstrap/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/others/magnific-popup.css")">
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/others/animate.css")">
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/others/owl.carousel.css")">
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/others/YTPlayer.css")">
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/others/navigation.css")">
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/icon/font-awesome.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/icon/ionicons.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/icon/pe-icon-7-stroke.css")">
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/icon/wfmi-style.css")">
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/icon/et-line.css")">
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/icon/classy-icon.css")">
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/classy-shortcodes.min.css")">
+
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/core-style.css")">
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/style.css")">
+    
+    <!-- Responsive css -->
+    <link href="@Url.Content("~/classy/css/responsive/responsive.css")" rel="stylesheet">
+
+    <!-- Switch Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
+    <link href="@Url.Content("~/classy/css/fonts/opensans.css")" rel="stylesheet">
 
     <environment names="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <!-- REVOLUTION STYLE SHEETS -->
-        <link rel="stylesheet" type="text/css" href="~/classy/revolution/css/settings.css">
-        <link rel="stylesheet" type="text/css" href="~/classy/revolution/css/layers.css">
-        <link rel="stylesheet" type="text/css" href="~/classy/revolution/css/navigation.css">
-
-        <!-- Core Style CSS -->
-        <link rel="stylesheet" href="~/classy/css/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" href="~/classy/css/others/magnific-popup.css">
-        <link rel="stylesheet" href="~/classy/css/others/animate.css">
-        <link rel="stylesheet" href="~/classy/css/others/owl.carousel.css">
-        <link rel="stylesheet" href="~/classy/css/others/YTPlayer.css">
-        <link rel="stylesheet" href="~/classy/css/others/navigation.css">
-        <link rel="stylesheet" href="~/classy/css/icon/font-awesome.min.css">
-        <link rel="stylesheet" href="~/classy/css/icon/ionicons.min.css">
-        <link rel="stylesheet" href="~/classy/css/icon/pe-icon-7-stroke.css">
-        <link rel="stylesheet" href="~/classy/css/icon/wfmi-style.css">
-        <link rel="stylesheet" href="~/classy/css/icon/et-line.css">
-        <link rel="stylesheet" href="~/classy/css/icon/classy-icon.css">
-        <link rel="stylesheet" href="~/classy/css/classy-shortcodes.min.css">
-
-        <link rel="stylesheet" href="~/classy/css/core-style.css">
-        <link rel="stylesheet" href="~/classy/css/style.css">
-
-
-        <!-- Responsive css -->
-        <link href="~/classy/css/responsive/responsive.css" rel="stylesheet">
-
-        <!-- Switch Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
-        <link href="~/classy/css/fonts/opensans.css" rel="stylesheet">
-        @Bundler.Unpack(HostingEnvironment.ContentRootPath, "~/css/site.min.css")
-        @*<link href="~/css/site.min.css" rel="stylesheet">*@
-
+        <link rel="stylesheet" href="@Url.Content("~/css/site.css")">
     </environment>
     <environment names="Staging,Production">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.3.1/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-
-        <!-- REVOLUTION STYLE SHEETS -->
-        <link rel="stylesheet" type="text/css" href="~/classy/revolution/css/settings.css" asp-append-version="true">
-        <link rel="stylesheet" type="text/css" href="~/classy/revolution/css/layers.css" asp-append-version="true">
-        <link rel="stylesheet" type="text/css" href="~/classy/revolution/css/navigation.css" asp-append-version="true">
-
-        <!-- Core Style CSS -->
-        /* :: 1.0 All CSS */
-        <link rel="stylesheet" href="~/classy/css/bootstrap/bootstrap.min.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/others/magnific-popup.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/others/animate.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/others/owl.carousel.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/others/YTPlayer.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/others/navigation.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/icon/font-awesome.min.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/icon/ionicons.min.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/icon/pe-icon-7-stroke.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/icon/wfmi-style.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/icon/et-line.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/icon/classy-icon.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/classy-shortcodes.min.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/core-style.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/classy/css/style.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true">
-
-        <!-- Responsive css -->
-        <link href="~/classy/css/responsive/responsive.css" rel="stylesheet" asp-append-version="true">
-
-        <!-- Switch Fonts -->
-        <link href="~/classy/css/fonts/opensans.css" rel="stylesheet" asp-append-version="true">
-
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="@Url.Content("~/css/site.min.css")" asp-append-version="true" />
     </environment>
-   
+
 </head>
 
 <body>
@@ -101,43 +65,36 @@
     @RenderBody()
 
     <partial name="_ClassyFooter" />
-
+  
     <!-- jQuery (necessary for all JavaScript plugins) -->
-    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="@Url.Content("~/lib/jquery/jquery.min.js")"></script>
 
     <!-- REVOLUTION JS FILES -->
-    <script type="text/javascript" src="classy/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="classy/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/jquery.themepunch.tools.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/jquery.themepunch.revolution.min.js")"></script>
 
     <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-    <script type="text/javascript" src="classy/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script type="text/javascript" src="classy/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script type="text/javascript" src="classy/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script type="text/javascript" src="classy/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="classy/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="classy/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="classy/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script type="text/javascript" src="classy/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="classy/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.actions.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.carousel.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.kenburn.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.layeranimation.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.navigation.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.navigation.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.parallax.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.slideanims.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.video.min.js")"></script>
 
     <!-- Popper js -->
-    <script src="classy/js/bootstrap/popper.min.js"></script>
+    <script src="@Url.Content("~/classy/js/bootstrap/popper.min.js")"></script>
     <!-- Bootstrap js -->
-    <script src="classy/js/bootstrap/bootstrap.min.js"></script>
+    <script src="@Url.Content("~/classy/js/bootstrap/bootstrap.min.js")"></script>
     <!-- Plugins js -->
-    <script src="classy/js/include-all-plugins.js"></script>
+    <script src="@Url.Content("~/classy/js/include-all-plugins.js")"></script>
     <!-- Active js -->
-    <script src="classy/js/active.js"></script>
+    <script src="@Url.Content("~/classy/js/active.js")"></script>
     <!-- Active js -->
-    <script src="classy/js/revolution-slider-active/creative-slider-active.js"></script>
+    <script src="@Url.Content("~/classy/js/revolution-slider-active/creative-slider-active.js")"></script>
 
-   
-    <environment names="Development">
-        @Bundler.Unpack(HostingEnvironment.ContentRootPath, "~/js/site.min.js")
-    </environment>
-    <environment names="Staging,Production">
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
 </body>
 
 </html>

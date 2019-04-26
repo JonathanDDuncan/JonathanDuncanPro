@@ -1833,7 +1833,7 @@
         z-index: 1;
     }
 
-    .creative_version .section_heading > h3:after {
+    /*.creative_version .section_heading > h3:after {
         background-color: #27ae60;
         content: "";
         height: 4px;
@@ -1842,7 +1842,7 @@
         top: 50%;
         width: 50px;
         margin-top: -3px;
-    }
+    }*/
 
     .creative_version.our_advisor_area {
         background-color: #2c3e50;
@@ -3056,7 +3056,7 @@
     }
 
     .minimal_version .cta_text > h2 {
-        color: #ffff;
+        color: #fff;
         display: inline-block;
         margin: 0;
     }
