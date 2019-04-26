@@ -16,7 +16,7 @@
     <![endif]-->
     <partial name="~/Views/Themes/Standard/_Shared/_Header.cshtml" />
 
-    <div class="page-cover" style="background-image: url('@Model.Blog.Cover')">
+    <div class="page-cover" style="background-image: url('blog/@Model.Blog.Cover')">
         <h1 class="page-cover-title">
             @if (Model.PostListType == PostListType.Search)
             {
