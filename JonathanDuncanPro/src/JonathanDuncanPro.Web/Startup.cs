@@ -53,31 +53,31 @@ namespace JonathanDuncanPro.Web
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             IConfigurationSection section;
-            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
-            {
-                section = Configuration.GetSection("Production");
-            }
-            else
-            {
+            //if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+            //{
+            //    section = Configuration.GetSection("Production");
+            //}
+            //else
+            //{
                 section = Configuration.GetSection("Blogifier");
-            }
+            //}
 
             services.AddAppSettings<AppItem>(section);
 
-            if (section.GetValue<string>("DbProvider") == "SqlServer")
-            {
-                AppSettings.DbOptions = options => options.UseSqlServer(section.GetValue<string>("ConnString"));
-                services.AddDbContext<AppDbContext>(options =>
-                 options.UseSqlServer(Configuration.GetConnectionString("jonathanduncanproconn")));
-            }
-            else if (section.GetValue<string>("DbProvider") == "MySql")
-            {
-                AppSettings.DbOptions = options => options.UseMySql(section.GetValue<string>("ConnString"));
-            }
-            else
-            {
+            //if (section.GetValue<string>("DbProvider") == "SqlServer")
+            //{
+            //    AppSettings.DbOptions = options => options.UseSqlServer(section.GetValue<string>("ConnString"));
+            //    services.AddDbContext<AppDbContext>(options =>
+            //     options.UseSqlServer(Configuration.GetConnectionString("jonathanduncanproconn")));
+            //}
+            //else if (section.GetValue<string>("DbProvider") == "MySql")
+            //{
+            //    AppSettings.DbOptions = options => options.UseMySql(section.GetValue<string>("ConnString"));
+            //}
+            //else
+            //{
                 AppSettings.DbOptions = options => options.UseSqlite(section.GetValue<string>("ConnString"));
-            }
+            //}
 
             services.Configure<CookiePolicyOptions>(options =>
             {
