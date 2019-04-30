@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 using System.Threading;
+using Serilog;
 
 namespace JonathanDuncanPro.Web
 {
@@ -20,6 +21,7 @@ namespace JonathanDuncanPro.Web
             var host = 
                 WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseSerilog()
                 .Build();
 
             SetupBlog(host);
