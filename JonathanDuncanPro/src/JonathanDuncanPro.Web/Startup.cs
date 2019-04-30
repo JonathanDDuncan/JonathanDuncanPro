@@ -38,46 +38,46 @@ namespace JonathanDuncanPro.Web
     {
         private string _projectRootFolder;
 
-        public Startup(IConfiguration config)
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = config;
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+
+            Configuration = builder.Build();
 
             Log.Logger = new LoggerConfiguration()
              .Enrich.FromLogContext()
              .WriteTo.RollingFile("Logs/{Date}.txt", LogEventLevel.Warning)
              .CreateLogger();
+
+            HostingEnvironment = env;
         }
 
         public IConfiguration Configuration { get; }
+        public IHostingEnvironment HostingEnvironment { get; }
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            IConfigurationSection section;
-            //if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
-            //{
-            //    section = Configuration.GetSection("Production");
-            //}
-            //else
-            //{
-                section = Configuration.GetSection("Blogifier");
-            //}
+            var section = Configuration.GetSection("Settings");
 
             services.AddAppSettings<AppItem>(section);
-
-            //if (section.GetValue<string>("DbProvider") == "SqlServer")
-            //{
-            //    AppSettings.DbOptions = options => options.UseSqlServer(section.GetValue<string>("ConnString"));
-            //    services.AddDbContext<AppDbContext>(options =>
-            //     options.UseSqlServer(Configuration.GetConnectionString("jonathanduncanproconn")));
-            //}
+            var connectionString = section.GetValue<string>("ConnString");
+            if (!connectionString.Contains("app.db".ToLowerInvariant()))
+                {
+                AppSettings.DbOptions = options => options.UseSqlServer(connectionString);
+                services.AddDbContext<AppDbContext>(options =>
+                 options.UseSqlServer(connectionString));
+            }
             //else if (section.GetValue<string>("DbProvider") == "MySql")
             //{
             //    AppSettings.DbOptions = options => options.UseMySql(section.GetValue<string>("ConnString"));
             //}
-            //else
-            //{
-                AppSettings.DbOptions = options => options.UseSqlite(section.GetValue<string>("ConnString"));
-            //}
+            else
+            {  
+                AppSettings.DbOptions = options => options.UseSqlite(connectionString);
+            }
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -85,15 +85,11 @@ namespace JonathanDuncanPro.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            // TODO: Add DbContext and IOC
-            //string dbName = Guid.NewGuid().ToString();
-            //services.AddDbContext<AppDbContext>(options =>
-            //    options.UseInMemoryDatabase(dbName));
-            //services.AddDbContext<AppDbContext>(options =>
-            //    options.UseInMemoryDatabase(dbName));
+
             services.AddDbContext<AppDbContext>(AppSettings.DbOptions, ServiceLifetime.Transient);
 
-            services.AddIdentity<AppUser, IdentityRole>(options => {
+            services.AddIdentity<AppUser, IdentityRole>(options =>
+            {
                 options.Password.RequireDigit = false;
                 options.Password.RequiredLength = 4;
                 options.Password.RequireNonAlphanumeric = false;
@@ -190,9 +186,7 @@ namespace JonathanDuncanPro.Web
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
 
-            _projectRootFolder = env.ContentRootPath.Substring(0,
-                env.ContentRootPath.LastIndexOf(@"\ProjectRoot\", StringComparison.Ordinal) + @"\ProjectRoot\".Length);
-
+            _projectRootFolder = GetRootPath(env);
             AppSettings.ContentRootPath = _projectRootFolder;
             Console.Write(_projectRootFolder);
             if (env.IsDevelopment())
@@ -208,12 +202,13 @@ namespace JonathanDuncanPro.Web
 
             app.UseHttpsRedirection();
             app.UseWebOptimizer();
-           
+
             app.UseAuthentication();
             app.UseStaticFiles(new StaticFileOptions
             {
                 OnPrepareResponse = ctx =>
                 {
+                    //Browser caching for static files
                     const int durationInSeconds = 60 * 60 * 24 * 366;
                     ctx.Context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.CacheControl] =
                         "public,max-age=" + durationInSeconds;
@@ -235,12 +230,18 @@ namespace JonathanDuncanPro.Web
 
             app.UseMvc(routes =>
             {
-                   routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(
+                 name: "default",
+                 template: "{controller=Home}/{action=Index}/{id?}");
 
                 routes.MapBundledFileAccessForDebug(env);
             });
+        }
+
+        private static string GetRootPath(IHostingEnvironment env)
+        {
+            return env.ContentRootPath.Substring(0,
+            env.ContentRootPath.LastIndexOf(@"\ProjectRoot\", StringComparison.Ordinal) + @"\ProjectRoot\".Length);
         }
     }
 }

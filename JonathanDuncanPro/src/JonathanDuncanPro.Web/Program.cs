@@ -17,26 +17,35 @@ namespace JonathanDuncanPro.Web
 
         public static void Main(string[] args)
         {
+            var host = 
+                WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .Build();
 
-            var host = CreateWebHostBuilder(args).Build();
+            SetupBlog(host);
 
+            host.Run();
+        }
+
+        private static void SetupBlog(IWebHost host)
+        {
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-                //var context = services.GetRequiredService<AppDbContext>();
+                var context = services.GetRequiredService<AppDbContext>();
 
-                //try
-                //{
-                //    if (context.Database.GetPendingMigrations().Any())
-                //    {
-                //        context.Database.Migrate();
-                //    }
-                //}
-                //catch { }
+                try
+                {
+                    if (context.Database.GetPendingMigrations().Any())
+                    {
+                        context.Database.Migrate();
+                    }
+                }
+                catch { }
 
-                //// load application settings from appsettings.json
-                //var app = services.GetRequiredService<IAppService<AppItem>>();
-                //AppConfig.SetSettings(app.Value);
+                // load application settings from appsettings.json
+                var app = services.GetRequiredService<IAppService<AppItem>>();
+                AppConfig.SetSettings(app.Value);
 
                 //if (app.Value.SeedData)
                 //{
@@ -59,13 +68,7 @@ namespace JonathanDuncanPro.Web
                 //    }
                 //}
             }
-
-
-            host.Run();
         }
-
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+ 
     }
 }

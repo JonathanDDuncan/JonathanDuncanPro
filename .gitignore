@@ -225,3 +225,6 @@ JonathanDuncanPro/azure-pipelines.yml
 JonathanDuncanPro/src/JonathanDuncanPro.Web/wwwroot/WB080K57G/
 JonathanDuncanPro/src/blog/App/App.csproj
 JonathanDuncanPro/src/blog/App/
+**/appsettings.development.json
+**/appsettings.staging.json
+**/appsettings.production.json
