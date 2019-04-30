@@ -47,26 +47,26 @@ namespace JonathanDuncanPro.Web
                 var app = services.GetRequiredService<IAppService<AppItem>>();
                 AppConfig.SetSettings(app.Value);
 
-                //if (app.Value.SeedData)
-                //{
-                //    var userMgr = (UserManager<AppUser>)services.GetRequiredService(typeof(UserManager<AppUser>));
-                //    if (!userMgr.Users.Any())
-                //    {
-                //        userMgr.CreateAsync(new AppUser { UserName = "admin", Email = "admin@us.com" }, "admin").Wait();
-                //        userMgr.CreateAsync(new AppUser { UserName = "demo", Email = "demo@us.com" }, "demo").Wait();
-                //    }
+                if (app.Value.SeedData)
+                {
+                    var userMgr = (UserManager<AppUser>)services.GetRequiredService(typeof(UserManager<AppUser>));
+                    if (!userMgr.Users.Any())
+                    {
+                        userMgr.CreateAsync(new AppUser { UserName = "admin", Email = "admin@us.com" }, "admin").Wait();
+                        userMgr.CreateAsync(new AppUser { UserName = "demo", Email = "demo@us.com" }, "demo").Wait();
+                    }
 
-                //    if (!context.BlogPosts.Any())
-                //    {
-                //        try
-                //        {
-                //            services.GetRequiredService<IStorageService>().Reset();
-                //        }
-                //        catch { }
+                    if (!context.BlogPosts.Any())
+                    {
+                        try
+                        {
+                            services.GetRequiredService<IStorageService>().Reset();
+                        }
+                        catch { }
 
-                //        AppData.Seed(context);
-                //    }
-                //}
+                        AppData.Seed(context);
+                    }
+                }
             }
         }
  
