@@ -34,20 +34,22 @@
     <link rel="stylesheet" href="@Url.Content("~/classy/css/icon/classy-icon.css")">
     <link rel="stylesheet" href="@Url.Content("~/classy/css/classy-shortcodes.min.css")">
 
-    <link rel="stylesheet" href="@Url.Content("~/classy/css/core-style.css")">
-    <link rel="stylesheet" href="@Url.Content("~/classy/css/style.css")">
-    
+    <link rel="stylesheet" href="@Url.Content("~/classy/css/core-style.css")" asp-append-version="true">
+
+
     <!-- Responsive css -->
     <link href="@Url.Content("~/classy/css/responsive/responsive.css")" rel="stylesheet">
 
     <!-- Switch Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
-    <link href="@Url.Content("~/classy/css/fonts/opensans.css")" rel="stylesheet">
-
+    <!--css/fonts/opensans.css included in site.css -->
+    
     <environment names="Development">
+        <link rel="stylesheet" href="@Url.Content("~/classy/css/style.css")">
         <link rel="stylesheet" href="@Url.Content("~/css/site.css")">
     </environment>
     <environment names="Staging,Production">
+        <link rel="stylesheet" href="@Url.Content("~/classy/css/style.min.css")" asp-append-version="true">
         <link rel="stylesheet" href="@Url.Content("~/css/site.min.css")" asp-append-version="true" />
     </environment>
 
