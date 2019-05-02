@@ -65,7 +65,7 @@ namespace JonathanDuncanPro.Web
             services.AddAppSettings<AppItem>(section);
             var connectionString = section.GetValue<string>("ConnString");
             if (!connectionString.Contains("app.db".ToLowerInvariant()))
-                {
+            {
                 AppSettings.DbOptions = options => options.UseSqlServer(connectionString);
                 services.AddDbContext<AppDbContext>(options =>
                  options.UseSqlServer(connectionString));
@@ -75,7 +75,7 @@ namespace JonathanDuncanPro.Web
             //    AppSettings.DbOptions = options => options.UseMySql(section.GetValue<string>("ConnString"));
             //}
             else
-            {  
+            {
                 AppSettings.DbOptions = options => options.UseSqlite(connectionString);
             }
 
@@ -145,7 +145,32 @@ namespace JonathanDuncanPro.Web
                 .AddControllersAsServices()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddWebOptimizer();
+            
+            services.AddWebOptimizer( pipeline =>
+            {
+                pipeline.AddCssBundle("/css/bundle.css",
+                    "/lib/bootstrap/dist/css/bootstrap.css",
+                    "/classy/revolution/css/settings.css",
+                    "/classy/revolution/css/layers.css",
+                    "/classy/revolution/css/navigation.css",
+                    "/classy/css/others/magnific-popup.css",
+                    "/classy/css/others/animate.css",
+                    "/classy/css/others/owl.carousel.css",
+                    "/classy/css/others/YTPlayer.css",
+                    "/classy/css/others/navigation.css",
+                    "/classy/css/icon/font-awesome.css",
+                    "/classy/css/icon/ionicons.min.css",
+                    "/classy/css/icon/pe-icon-7-stroke.css",
+                    "/classy/css/icon/wfmi-style.css",
+                    "/classy/css/icon/et-line.css",
+                    "/classy/css/icon/classy-icon.css",
+                    "/classy/css/classy-shortcodes.css",
+                    "/classy/css/core-style.css",
+                    "/classy/css/responsive/responsive.css",
+                    "/classy/css/style.css",
+                    "/css/site.css"
+                  );
+            });
 
             services.AddSwaggerGen(c =>
             {
