@@ -11,7 +11,7 @@
     <!-- Title  -->
     <title>@ViewData["Title"] - Jonathan Duncan's website</title>
     <!-- Favicon  -->
-    <link rel="shortcut icon" href="jonathanduncan.ico">
+    <link rel="shortcut icon" href="@Url.Content("~/jonathanduncan.ico")">
 
     <!-- Switch Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" />
@@ -38,36 +38,9 @@
     @RenderBody()
 
     <partial name="_ClassyFooter" />
-  
-    <!-- jQuery (necessary for all JavaScript plugins) -->
-    <script src="@Url.Content("~/lib/jquery/jquery.min.js")"></script>
 
-    <!-- REVOLUTION JS FILES -->
-    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/jquery.themepunch.tools.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/jquery.themepunch.revolution.min.js")"></script>
 
-    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.actions.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.carousel.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.kenburn.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.layeranimation.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.navigation.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.navigation.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.parallax.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.slideanims.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/classy/revolution/js/extensions/revolution.extension.video.min.js")"></script>
-
-    <!-- Popper js -->
-    <script src="@Url.Content("~/classy/js/bootstrap/popper.min.js")"></script>
-    <!-- Bootstrap js -->
-    <script src="@Url.Content("~/classy/js/bootstrap/bootstrap.min.js")"></script>
-    <!-- Plugins js -->
-    <script src="@Url.Content("~/classy/js/include-all-plugins.js")"></script>
-    <!-- Active js -->
-    <script src="@Url.Content("~/classy/js/active.js")"></script>
-    <!-- Active js -->
-    <script src="@Url.Content("~/classy/js/revolution-slider-active/creative-slider-active.js")"></script>
-
+    <script src="~/js/bundle.js"></script>
 </body>
 
 </html>

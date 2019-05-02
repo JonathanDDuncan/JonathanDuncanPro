@@ -170,6 +170,32 @@ namespace JonathanDuncanPro.Web
                     "/classy/css/style.css",
                     "/css/site.css"
                   );
+
+      
+               
+                pipeline.AddJavaScriptBundle("/js/bundle.js",
+                   "lib/jquery/jquery.js",
+                   "classy/revolution/js/jquery.themepunch.tools.min.js",
+                   "classy/revolution/js/jquery.themepunch.revolution.min.js",
+                   "classy/revolution/js/extensions/revolution.extension.actions.min.js",
+                   "classy/revolution/js/extensions/revolution.extension.carousel.min.js",
+                   "classy/revolution/js/extensions/revolution.extension.kenburn.min.js",
+                   "classy/revolution/js/extensions/revolution.extension.layeranimation.min.js",
+                   "classy/revolution/js/extensions/revolution.extension.navigation.min.js",
+                   "classy/revolution/js/extensions/revolution.extension.navigation.min.js",
+                   "classy/revolution/js/extensions/revolution.extension.parallax.min.js",
+                   "classy/revolution/js/extensions/revolution.extension.slideanims.js",
+                   "classy/revolution/js/extensions/revolution.extension.video.min.js",
+                   "classy/js/bootstrap/popper.min.js",
+                   "classy/js/bootstrap/bootstrap.min.js",
+                   "classy/js/include-all-plugins.js",
+                   "classy/js/active.js",
+                   "classy/js/revolution-slider-active/creative-slider-active.js"
+                   );
+
+                pipeline.MinifyCssFiles();
+                pipeline.MinifyJsFiles();
+
             });
 
             services.AddSwaggerGen(c =>
@@ -214,6 +240,7 @@ namespace JonathanDuncanPro.Web
             _projectRootFolder = GetRootPath(env);
             AppSettings.ContentRootPath = _projectRootFolder;
             Console.Write(_projectRootFolder);
+            app.UseWebOptimizer();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -226,7 +253,7 @@ namespace JonathanDuncanPro.Web
             }
 
             app.UseHttpsRedirection();
-            app.UseWebOptimizer();
+          
 
             app.UseAuthentication();
             app.UseStaticFiles(new StaticFileOptions
