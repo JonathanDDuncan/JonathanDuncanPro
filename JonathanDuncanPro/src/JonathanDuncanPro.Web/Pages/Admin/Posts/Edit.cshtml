@@ -194,7 +194,7 @@
                     return getUrl('posts/' + this.post.slug);
                 },
                 getCover: function () {
-                    return this.post.cover && this.post.cover !== null ? getUrl(this.post.cover) : getUrl('blog/lib/img/cover.png');
+                    return this.post.cover && this.post.cover !== null ? getUrl(this.post.cover) : getUrl('lib/img/cover.png');
                 },
                 isDate: function (date) {
                     return (new Date(date) !== "Invalid Date") && !isNaN(new Date(date));

@@ -37,8 +37,8 @@ namespace Core.Data
             blog.Title = title == null ? "Blog Title" : title.Content;
             blog.Description = desc == null ? "Short blog description" : desc.Content;
             blog.ItemsPerPage = items == null ? 10 : int.Parse(items.Content);
-            blog.Cover = cover == null ? "blog/lib/img/cover.png" : cover.Content;
-            blog.Logo = logo == null ? "blog/lib/img/logo-white.png" : logo.Content;
+            blog.Cover = cover == null ? "lib/img/cover.png" : cover.Content;
+            blog.Logo = logo == null ? "lib/img/logo-white.png" : logo.Content;
             blog.Theme = theme == null ? "Standard" : theme.Content;
             blog.Culture = culture == null ? "en-US" : culture.Content;
 
