@@ -20,21 +20,21 @@
         <h1 class="page-cover-title">
             @if (Model.PostListType == PostListType.Search)
             {
-                <a href="#"><i class="fa fa-search"></i> @Model.Blog.Title</a>
+                <a href="~/blog"><i class="fa fa-search"></i> @Model.Blog.Title</a>
             }
             else if (Model.PostListType == PostListType.Author)
             {
-                <a href="~/">
+                <a href="~/blog">
                     <img src="~/@Model.Author.Avatar" class="rounded-circle" style="width: 52px" /> @Model.Author.DisplayName
                 </a>
             }
             else if (Model.PostListType == PostListType.Category)
             {
-                <a href="#"><i class="fa fa-tag"></i> @ViewBag.Category</a>
+                <a href="~/blog"><i class="fa fa-tag"></i> @ViewBag.Category</a>
             }
             else
             {
-                <a href="~/">@Model.Blog.Title</a>
+                <a href="~/blog">@Model.Blog.Title</a>
             }
         </h1>
         <p class="page-cover-desc">@Model.Blog.Description</p>
