@@ -6,6 +6,15 @@
     <OutputType>Exe</OutputType>
     <PackageId>JonathanDuncanPro.Web</PackageId>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+    <Content Remove="wwwroot\blog\themes\material\js\core\jquery.min.js" />
+    <Content Remove="wwwroot\blog\themes\material\js\core\popper.min.js" />
+    <Content Remove="wwwroot\blog\themes\material\js\plugins\moment.es5.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\blog\themes\material\js\plugins\moment.es5.min.js" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Update="wwwroot\**\*;Views\**\*;Areas\**\Views;appsettings.json;web.config">
@@ -66,6 +75,13 @@
     <Folder Include="wwwroot\lib\bootstrap\dist\css\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\fonts\" />
     <Folder Include="wwwroot\lib\bootstrap\dist\js\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+    <None Include="wwwroot\blog\themes\material\js\core\jquery.min.js" />
+    <None Include="wwwroot\blog\themes\material\js\core\popper.min.js" />
+    <None Include="wwwroot\blog\themes\material\js\plugins\moment.es5.min.js" />
   </ItemGroup>
 
 </Project>

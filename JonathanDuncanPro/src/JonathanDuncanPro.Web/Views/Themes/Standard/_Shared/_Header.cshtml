@@ -1,13 +1,17 @@
 <header class="blog-header d-flex flex-column">
     <div class="container d-flex">
         <a href="~/blog" class="blog-logo my-auto d-flex">
-            <img src="~/blog/@Model.Blog.Logo" alt="@Model.Blog.Title" class="my-auto" />
+            <img src="~/@Model.Blog.Logo" alt="@Model.Blog.Title" class="my-auto" />
             @if (ViewData["bodyClass"] != null && ViewData["bodyClass"].ToString() != "home")
             {
                 <span class="my-auto">@Model.Blog.Title</span>
             }
         </a>
         <ul class="blog-social nav ml-auto my-auto">
+
+            <li class="blog-social-item"><a href="~/" class="blog-social-link"><i class="blog-social-icon fa fa-home"></i></a></li>
+            <li class="blog-social-item"><a href="~/blog" class="blog-social-link"><i class="blog-social-icon fa fa-list"></i></a></li>
+            
             <li class="blog-social-item"><a href="https://www.facebook.com/blogifierdotnet" target="_blank" class="blog-social-link"><i class="blog-social-icon fa fa-facebook-official"></i></a></li>
             <li class="blog-social-item"><a href="/feed/rss" target="_blank" class="blog-social-link"><i class="blog-social-icon fa fa-rss-square"></i></a></li>
         </ul>

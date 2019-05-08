@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <partial name="~/Views/Themes/Standard/_Shared/_Head.cshtml" />
+    <partial name="~/Views/Themes/Standard/_Shared/_Head.cshtml" /> 
 </head>
 <body class="@ViewData["bodyClass"]">
     <!--[if lt IE 10]>
@@ -43,19 +43,19 @@
                     <ul class="pagination justify-content-center">
                         @if (Model.Older != null)
                         {
-                        <li class="item item-prev">
-                            <a class="item-link" href="~/posts/@Model.Older.Slug" title="@Model.Older.Title">
-                                <i class="item-icon fa fa-angle-left"></i>
-                            </a>
-                        </li>
+                            <li class="item item-prev">
+                                <a class="item-link" href="~/posts/@Model.Older.Slug" title="@Model.Older.Title">
+                                    <i class="item-icon fa fa-angle-left"></i>
+                                </a>
+                            </li>
                         }
                         @if (Model.Newer != null)
                         {
-                        <li class="item item-next">
-                            <a class="item-link" href="~/posts/@Model.Newer.Slug" title="@Model.Newer.Title">
-                                <i class="item-icon fa fa-angle-right"></i>
-                            </a>
-                        </li>
+                            <li class="item item-next">
+                                <a class="item-link" href="~/posts/@Model.Newer.Slug" title="@Model.Newer.Title">
+                                    <i class="item-icon fa fa-angle-right"></i>
+                                </a>
+                            </li>
                         }
                     </ul>
                 }
