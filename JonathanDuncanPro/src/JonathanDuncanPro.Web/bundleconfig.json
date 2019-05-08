@@ -20,5 +20,11 @@
     "inputFiles": [
       "wwwroot/classy/css/core-style.css"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/blog/themes/material/js/core/popper.min.min.js",
+    "inputFiles": [
+      "wwwroot/blog/themes/material/js/core/popper.min.js"
+    ]
   }
 ]

@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "wwwroot/blog/themes/material/js/core/jquery.es5.js",
+    "inputFile": "wwwroot/blog/themes/material/js/core/jquery.js"
+  },
+  {
+    "outputFile": "wwwroot/blog/themes/material/js/plugins/moment.es5.js",
+    "inputFile": "wwwroot/blog/themes/material/js/plugins/moment.js"
+  }
+]
