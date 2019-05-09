@@ -1,8 +1,9 @@
 ﻿<meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>@Html.Raw(Model.Blog.Title)</title>
 <meta name="description" content="@Html.Raw(Model.Blog.Description)">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@Html.Raw(Model.Blog.Title)</title>
+<link rel="canonical" href="@HttpContextExtensions.CanonicalUrl(Context)" />
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|Merriweather:700" rel="stylesheet">
 <link href="~/blog/themes/standard/css/bootstrap.min.css" rel="stylesheet">
 <link href="~/blog/themes/standard/css/font-awesome.min.css" rel="stylesheet">
