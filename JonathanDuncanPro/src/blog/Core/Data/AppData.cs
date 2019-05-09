@@ -16,7 +16,7 @@ namespace Core.Data
                 AppUserName = "admin",
                 Email = "admin@us.com",
                 DisplayName = "Administrator",
-                Avatar = "blog/data/admin/avatar.png",
+                Avatar = "blogstatic/data/admin/avatar.png",
                 Bio = "<p>Something about <b>administrator</b>, maybe HTML or markdown formatted text goes here.</p><p>Should be customizable and editable from user profile.</p>",
                 IsAdmin = true,
                 Created = DateTime.UtcNow.AddDays(-120)

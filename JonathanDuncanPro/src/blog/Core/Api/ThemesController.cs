@@ -137,7 +137,7 @@ namespace Core.Api
                     var item = new ThemeItem
                     {
                         Title = theme,
-                        Cover = System.IO.File.Exists(file) ? $"themes/{theme}/{theme}.png" : "blog/lib/img/img-placeholder.png",
+                        Cover = System.IO.File.Exists(file) ? $"themes/{theme}/{theme}.png" : "blogstatic/lib/img/img-placeholder.png",
                         IsCurrent = theme == _blog.Theme
                     };
 

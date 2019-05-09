@@ -132,7 +132,7 @@ namespace Core.Data
             var post = _db.BlogPosts.Single(predicate);
             var item = PostToItem(post);
 
-            item.Author.Avatar = string.IsNullOrEmpty(item.Author.Avatar) ? "blog/lib/img/avatar.jpg" : item.Author.Avatar;
+            item.Author.Avatar = string.IsNullOrEmpty(item.Author.Avatar) ? "blogstatic/lib/img/avatar.jpg" : item.Author.Avatar;
 
             return await Task.FromResult(item);
         }
