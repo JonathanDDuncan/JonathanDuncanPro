@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: 
+Disallow: /data/
+Disallow: /videos/
+Disallow: /lib/
+Disallow: /images/
+Disallow: /css/
+Disallow: /classy/
+Disallow: /blogstatic/

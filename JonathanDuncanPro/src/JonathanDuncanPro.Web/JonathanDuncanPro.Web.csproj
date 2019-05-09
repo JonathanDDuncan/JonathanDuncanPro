@@ -658,6 +658,7 @@
     <None Include="wwwroot\blogstatic\themes\wide\scss\widgets\_tags.scss" />
     <None Include="wwwroot\blogstatic\widgets\newsletter\edit.js" />
     <None Include="wwwroot\blogstatic\widgets\newsletter\widget.js" />
+    <None Include="wwwroot\robots.txt" />
   </ItemGroup>
 
 </Project>
